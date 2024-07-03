@@ -218,7 +218,7 @@ def _jdbc_connect_jpype(jclassname, url, driver_args, jars, libs):
         def _java_array_byte(data):
             return jpype.JArray(jpype.JByte, 1)(data)
     # register driver for DriverManager
-    jpype.JClass(jclassname)
+    jpype.JClass(jclassname)()
     if isinstance(driver_args, dict):
         Properties = jpype.java.util.Properties
         info = Properties()
